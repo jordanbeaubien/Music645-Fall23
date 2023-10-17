@@ -22,7 +22,7 @@
  *      ----------------------------------  
  *      | 1 2 3 4 5 6 7 |  scale quality |   
  *      |      - +      | LFO AttackTime |   
- *      |      [ ]      | LFO AttackTime |   
+ *      |      [ ]      | LFO ReleasTime |   
  *      |      R T      |  Transpose     |   
  *      |       G       | Reset Values   |   
  *      |       Q       |     Bail out   |   
@@ -52,8 +52,8 @@ Event stopNoteTrigger[voicesMax];
 [90, 88, 67, 86, 66, 78, 77, /* Z,X,C,V,B,N,M <- Melody */
  71, /* G <- Reset Synth */
  82, 84, /* R,T <- Modulate key */
- 45, 61, /* -,= <- attackTime of LPF */
- 91, 93, /* [,] <- releaseTime of LF */
+ 45, 61, /* -,= <- attackTime of LFO */
+ 91, 93, /* [,] <- ReleasTime of LFO */
  81, /* Q <- Quit Program */
  49, 50, 51, 52, 53, 54, 55] /* 1thur7 is scale quality */
  @=> int keysValid[];
@@ -243,7 +243,7 @@ fun void displayScreen() {
   <<< "-------------------------------------", " " >>>;
   <<< "|  1 2 3 4 5 6 7  |   scale quality |", " " >>>;
   <<< "|       - +       |  LFO AttackTime |", " " >>>;
-  <<< "|       [ ]       |  LFO AttackTime |", " " >>>;
+  <<< "|       [ ]       |  LFO ReleasTime |", " " >>>;
   <<< "|       R T       |   Transpose     |", " " >>>;
   <<< "|        G        |  Reset Values   |", " " >>>;
   <<< "|        Q        |      Bail out   |", " " >>>;
